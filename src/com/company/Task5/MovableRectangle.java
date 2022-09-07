@@ -49,8 +49,12 @@ public class MovableRectangle implements Movable {
     }
 
     ///Метод проверяет одинаковая ли скорость у точек
-    public void sameSpeed(){
-
+    public boolean sameSpeed(){
+        if (topLeft.getySpeed() == bottomRight.getySpeed() &&
+                topLeft.getxSpeed() == bottomRight.getySpeed() ){
+            return true;
+        }
+        return false;
     }
 
 }
