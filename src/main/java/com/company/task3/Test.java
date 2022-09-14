@@ -46,6 +46,9 @@ public class Test {
             a[start+i]=tmp[i];
     }
 
+
+
+    ///Функция создания массива
     public static Student[] randArr(int n){
         Student[] arr = new Student[n];
         for (int i=0; i<n; i++){
@@ -54,6 +57,8 @@ public class Test {
         return arr;
     }
 
+
+    ///Функция выода массива
     public static void print(Student[] arr){
         for(int i=0; i<arr.length; i++){
             System.out.println(arr[i]);
