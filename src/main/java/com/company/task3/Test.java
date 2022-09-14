@@ -48,6 +48,7 @@ public class Test {
 
 
 
+    ///Фан
     ///Функция создания массива
     public static Student[] randArr(int n){
         Student[] arr = new Student[n];
