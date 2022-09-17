@@ -19,7 +19,7 @@ public class MilanXReal extends JFrame {
     public JButton milanBtn = Element.votingButton("AC Milan");
     public JButton realBtn = Element.votingButton("Real Madrid");
     public JLabel result = Element.customJlabel("Result: 0 X 0", Color.white, 96, WIDTH_FRAME,116);
-    public JLabel lastS = Element.customJlabel("Last Scorer: Milan", Color.decode("#D32F2F"), 48,WIDTH_FRAME,58);
+    public JLabel lastS = Element.customJlabel("Last Scorer: N/A", Color.decode("#D32F2F"), 48,WIDTH_FRAME,58);
     public JLabel timer = Element.customJlabel("Time: 10s", Color.white, 40,220,48);
     public JLabel winner = Element.customJlabel("Winner: DRAW", Color.decode("#D32F2F"), 64,WIDTH_FRAME,77);
 
@@ -30,6 +30,7 @@ public class MilanXReal extends JFrame {
         timer.setLocation(441, 441);
         realBtn.setLocation(742,400);
         winner.setLocation(0,595);
+        winner.setVisible(false);
 
         timer1 = new Timer(1000, new ActionListener() { // Таймер на 10 секунд игры, после завершения - оповещение и блокировка кнопок
             int sec = 10;
@@ -43,6 +44,7 @@ public class MilanXReal extends JFrame {
                     timer.setText("Stop Match");
                     milanBtn.setEnabled(false);
                     realBtn.setEnabled(false);
+                    winner.setVisible(true);
                 }
                 else {
                     sec -= 1;
@@ -50,6 +52,7 @@ public class MilanXReal extends JFrame {
                 }
             }
         });
+
 
         milanBtn.addActionListener(new ActionListener() { // Увеличение счета для AC Milan
             @Override
@@ -84,8 +87,11 @@ public class MilanXReal extends JFrame {
         mainFrame.add(lastS);
         mainFrame.add(milanBtn);;
         mainFrame.add(realBtn);
-        mainFrame.add(winner);
         mainFrame.add(timer);
+        mainFrame.add(winner);
+
+
+
         getContentPane().add(mainFrame);
 
 
