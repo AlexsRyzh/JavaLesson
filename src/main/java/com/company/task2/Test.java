@@ -52,7 +52,7 @@ public class Test {
     }
 
     public static void main(String[] args) {
-        int n = 50;
+        int n = 20;
         Student[] arr = randArr(n);
         print(arr);
         quickSort(arr, 0,n-1, new SortingStudentsByGPA());
